@@ -7,6 +7,8 @@ set(CMAKE_OSX_ARCHITECTURES "arm64")   # M2 Pro
 
 add_executable(test_cpp 
     main.cpp
+    Process.cpp
+    Memory.cpp
 )
 
 target_link_libraries(test_cpp 
