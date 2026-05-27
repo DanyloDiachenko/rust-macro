@@ -4,14 +4,6 @@
 
 Memory::Memory(Process &process) : m_process(process) {}
 
-template <typename T> T Memory::Read(uintptr_t address) const {
-  T value = {};
-  if (!ReadBytes(address, &value, sizeof(T))) {
-    return {};
-  }
-  return value;
-}
-
 bool Memory::ReadBytes(uintptr_t address, void *buffer, size_t size) const {
   if (!m_process.IsValid() || address == 0) {
     return false;
