@@ -1,3 +1,4 @@
+@ -1,35 +1,4 @@
 # Prerequisites
 *.d
 
@@ -33,3 +34,9 @@ build
 *.exe
 *.out
 *.app
+bin/
+obj/
+publish/
+.vscode/
+
+hidmouse/hid_mouse_daemon
