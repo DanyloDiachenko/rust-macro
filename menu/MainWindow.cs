@@ -66,7 +66,7 @@ public class MainWindow : Window
 
         var hint = new TextBlock
         {
-            Text = "Ctrl+F1 to toggle in-game",
+            Text = "Mouse4 to toggle in-game",
             FontSize = 10,
             Foreground = new SolidColorBrush(Color.Parse("#2b2b2b")),
             HorizontalAlignment = HorizontalAlignment.Center,
@@ -114,9 +114,9 @@ public class MainWindow : Window
             {
                 Thread.Sleep(30);
                 var json = File.ReadAllText(MacroState.StateFile);
-                var data = JsonSerializer.Deserialize<JsonElement>(json);
-                var enabled = data.GetProperty("enabled").GetBoolean();
-                MacroState.Instance.SetFromFile(enabled);
+                var data = JsonSerializer.Deserialize<MacroStateDto>(json);
+                if (data != null)
+                    MacroState.Instance.SetFromFile(data);
             }
             catch { }
         };

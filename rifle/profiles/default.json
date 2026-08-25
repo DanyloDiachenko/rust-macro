@@ -1,8 +1,9 @@
 {
-  "enabled": false,
   "weapon": "ak47",
   "strength": 3,
-  "profile": "default",
+  "strafeMultiplier": 2.25,
+  "standMultiplier": 1.75,
+  "humanJitter": 0.10,
   "modifiers": {
     "posture": "stand",
     "ads": false,
